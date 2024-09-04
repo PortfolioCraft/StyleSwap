@@ -1,0 +1,1281 @@
+/* Reset Box Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body.login-page-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* General Styles */
+header {
+    background-color: blue;
+    padding: 10px 0;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.toggle-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.toggle-switch input[type="radio"] {
+    display: none; /* Hide the default radio buttons */
+}
+
+.toggle-switch label {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 0;
+    color: #333;
+    font-size: 14px;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 2; /* Ensure the label text is above the slider */
+}
+
+.toggle-switch #male-header:checked + label[for="male-header"],
+.toggle-switch #female-header:checked + label[for="female-header"],
+.toggle-switch #male:checked + label[for="male"],
+.toggle-switch #female:checked + label[for="female"] {
+    color: #fff; /* Change text color when active */
+}
+
+.toggle-switch .switch-slider {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #007bff; /* Default color for Male */
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1; /* Below label text */
+}
+
+.toggle-switch #female-header:checked ~ .switch-slider,
+.toggle-switch #female:checked ~ .switch-slider {
+    transform: translateX(100%); /* Move slider to the Female side */
+    background-color: #ff4081; /* Color for Female */
+}
+
+/* Header-specific styles */
+.gender-switch-header {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 50px; /* Default size for large screens */
+}
+
+.gender-select select {
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px gray;
+    margin-left: 20px;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.search-bar {
+    flex-grow: 1; /* Make the search bar take up available space */
+    margin: 0 20px; /* Adjust margins for space */
+}
+
+.gender-select select {
+    padding: 5px;
+    margin-left: 20px;
+}
+
+
+.search-bar input {
+    width: 100%; /* Make the input field full width */
+    padding: 8px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Style the container and elements */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* Icons style */
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Profile icon and dropdown container */
+.profile-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: white;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover of profile icon or dropdown menu */
+.profile-icon:hover .dropdown-menu,
+.profile-icon .dropdown-menu:hover {
+    display: block;
+}
+
+
+.icons {
+    display: flex; /* Flex for the icon container */
+}
+
+.icons i {
+    font-size: 24px; /* Size of the icons */
+    margin-left: 15px; /* Space between icons */
+    color: white;
+    cursor: pointer; /* Pointer cursor for interactive icons */
+}
+
+.icons i:hover {
+    color: #ddd;
+}
+
+/* Toggle Menu Styles */
+.toggle-menu {
+    display: none; /* Hide toggle icon by default */
+}
+
+.toggle-menu .material-icons {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Sidebar Menu Styles */
+.sidebar-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: inherit; /* This keeps the link color the same as the surrounding text */
+}
+
+.sidebar-menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: inherit; /* This keeps the link color the same as the surrounding text */
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sidebar-menu li span {
+    margin-right: 10px;
+    text-decoration: none;
+    color: inherit; /* This keeps the link color the same as the surrounding text */
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .gender-switch-header {
+        display: none; /* Hide gender toggle in navbar on small screens */
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 10px; /* Reduce padding for more space */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        flex: 0 0 auto; /* Do not grow or shrink */
+    }
+
+    .logo img {
+        height: 40px; /* Reduce logo size on small screens */
+        padding: 4px;
+    }
+
+    .sidebar-menu ul li a {
+        text-decoration: none;
+        color: black; /* Keeps the text color white */
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    /* Gender Switch Styles */
+.gender-switch {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.gender-switch .material-icons {
+    margin-right: 10px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.toggle-switch input[type="radio"] {
+    display: none; /* Hide the default radio buttons */
+}
+
+.toggle-switch label {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit; /* This keeps the link color the same as the surrounding text */
+    padding: 10px 0;
+    color: #333;
+    font-size: 14px;
+    z-index: 2; /* Ensure the label text is above the slider */
+}
+
+.toggle-switch #male:checked + label[for="male"],
+.toggle-switch #female:checked + label[for="female"] {
+    color: #fff; /* Change text color when active */
+}
+
+.toggle-switch .switch-slider {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #007bff; /* Default color for Male */
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1; /* Below label text */
+}
+
+.toggle-switch #female:checked ~ .switch-slider {
+    transform: translateX(100%); /* Move slider to the Female side */
+    background-color: #ff4081; /* Color for Female */
+}
+
+
+    .search-bar {
+        flex-grow: 1; /* Allow the search bar to grow and fill available space */
+        margin: 0 15px; /* Center the search bar with equal margins */
+        text-align: center; /* Center the search bar */
+    }
+
+    .search-bar input {
+        width: 100%; /* Ensure full width within available space */
+        padding: 6px; /* Slightly reduce padding for small screens */
+        border-radius: 25px;
+    }
+
+    .icons {
+        display: none; /* Hide icons on small screens */
+    }
+
+    .toggle-menu {
+        display: block; /* Show toggle icon on small screens */
+        margin-left: auto; /* Keep toggle icon aligned to the right */
+        margin-right: 10px;
+    }
+
+    .profile-icon .dropdown-menu {
+        position: absolute;
+        right: 10px; /* Align the dropdown to the right edge of the screen */
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        display: none; /* Initially hide the dropdown */
+    }
+
+    .profile-icon:hover .dropdown-menu {
+        display: block; /* Show dropdown menu on hover */
+    }
+}
+
+ /* Custom styles for carousel */
+ .carousel-container {
+    width: 94%;
+    margin: 25px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px; /* Fixed height for images */
+    object-fit: cover; /* Ensures images cover the area without stretching */
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dm-serif-text-regular {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .dm-serif-text-regular-italic {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+
+/*
+.carousel-controls {
+ /*   position: absolute;  */
+ /*   top: 10%;  */
+ /*   width: 50%;  */
+ /*   display: flex;  */
+   /* justify-content: space-between; */
+  /*  transform: translateY(-50%);  */
+
+*/
+
+.control-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    height: auto;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.section {
+    display: flex;
+    margin: 20px;
+}
+
+/* Left Menu Styling */
+.left-menu {
+    width: 25%;
+   /* background-color: #f4f4f4; */
+    padding: 20px;
+  /*  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+}
+
+.left-menu ul {
+    list-style-type: none;
+    padding: 0;
+    border-radius: 25px;
+
+}
+
+.left-menu ul li {
+    margin-bottom: 15px;
+    border-radius: 25px;
+}
+
+.left-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 25px;
+    font-weight: bold;
+    padding: 25px 10px; /* Increased padding for more spacing */
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    border: 1px solid #ccc; /* Adds a border to look more like tabs */
+}
+
+.left-menu ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Right Content Styling */
+.right-content {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Right Side Product Cards */
+.product-cards {
+    width: 75%; /* Occupies 75% of the width */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px; /* Space between cards */
+    box-sizing: border-box;
+}
+/* Product Card Styling */
+.product-card {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    width: 90%;
+    position: relative;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.image-container {
+    position: relative;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: gray;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 50%;
+    transition: color 0.3s;
+}
+
+/* Additional text and cart icon button */
+.additional-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Style for the cart button */
+.cart-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cart-button:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cart-icon {
+    font-size: 20px;
+    color: #333;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 10px;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.product-card p {
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10px;
+    color: #666;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* For WebKit browsers */
+.left-menu::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 8px; /* Height of the scrollbar for horizontal scrolling */
+}
+
+.left-menu::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+    border-radius: 10px; /* Rounded corners on the track */
+}
+
+.left-menu::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners on the thumb */
+    border: 2px solid #f1f1f1; /* Space between thumb and track */
+}
+
+.left-menu::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Change color when hovered over */
+}
+
+/* For Firefox */
+.left-menu {
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color: #888 #f1f1f1; /* Color of the thumb and track */
+}
+
+
+    .section {
+        flex-direction: column; /* Stack menu and content vertically */
+    }
+
+    .left-menu {
+        width: 100%;
+        margin-bottom: 0px; /* Space between menu and content */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent items from wrapping onto new lines */
+    }
+
+    .left-menu ul {
+        display: inline-flex; /* Display list items in a single row */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        justify-content: space-around; /* Evenly space the items */
+        padding: 0;
+        margin: 0;
+        list-style: none; /* Remove default list styling */
+    }
+
+    .left-menu ul li {
+        flex: 0 0 auto; /* Prevent list items from growing or shrinking */
+        text-align: center; /* Center-align text */
+        padding: 10px; /* Add some padding around the list items */
+    }
+
+    .left-menu ul li a {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+        border-radius: 0; /* Remove border-radius for a flat look */
+        border: none; /* Remove border to make it look like tabs */
+        display: inline-block; /* Ensure link takes up space like a block element */
+    }
+
+    .product-cards {
+        width: 110%; /* Set width to 100% to fit within the view */
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 10px; /* Reduced gap between cards */
+        text-align: left;
+    }
+
+    .teddy{
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-cards {
+        grid-template-columns: 1fr; /* 1 card per row on small screens */
+        gap: 10px; /* Reduced gap between cards */
+    }
+}
+
+
+/* Login page styles */
+
+/* Container styles */
+.login-page-container {
+    display: flex;
+    width: 80%;
+    border-radius: 15px;
+    max-width: 1200px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 600px; /* Adjust the height here */
+}
+
+/* Login section styles */
+.login-page-login-section {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the contents horizontally */
+}
+
+.login-page-login-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px; /* Reduce the space below the heading */
+    text-align: center;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.login-page-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Remove extra padding */
+    width: 100%; /* Ensure the form takes up the full width */
+    max-width: 400px; /* Set a max-width to control form width */
+}
+
+.login-page-form label {
+    margin-bottom: 5px; /* Reduce the space below labels */
+    font-weight: bold;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.login-page-form input {
+    padding: 10px;
+    margin-bottom: 15px; /* Reduce the space below inputs */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.login-page-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.login-page-button:hover {
+    background-color: #0056b3;
+}
+
+/* Google login button alignment */
+.login-page-google-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+
+/* Carousel section styles */
+.login-page-carousel-section {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+}
+
+.login-page-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.login-page-carousel-image {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.login-page-carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.login-page-carousel-image p {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    max-width: 80%;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.login-page-carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.login-page-carousel-controls button {
+    background-color: white;
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.login-page-carousel-controls button:hover,
+.login-page-carousel-controls button.active {
+    background-color: blue;
+}
+
+
+/* Show the first slide */
+.login-page-carousel-image:first-child {
+    display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .login-page-container {
+        flex-direction: column;
+        border-radius: 25px;
+    }
+
+    .login-page-login-section, .login-page-carousel-section {
+        width: 100%;
+    }
+
+    .login-page-carousel-image img {
+        height: 300px;
+        border-radius: 25px;
+    }
+
+    .login-page-carousel-image p {
+        font-size: 16px;
+    }
+}
+
+/* Google Login Styles */
+.login-page-google-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.google-login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    border-radius: 25px;
+    background-color: #4285f4;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-align: center; /* Ensure text is centered */
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.google-login-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.google-login-button:hover {
+    background-color: #357ae8;
+}
+
+/* Password Input and Toggle */
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: calc(100% - 40px); /* Adjust width to accommodate the icon */
+    padding-right: 40px;
+    border-radius: 25px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: black;
+    padding-bottom: 15px;
+}
+
+.toggle-password:hover {
+    color: #007bff;
+}
+
+/* Disabled Button */
+.login-page-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Text Link after Form */
+.login-page-login-section p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-page-login-section p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-page-login-section p a:hover {
+    text-decoration: underline;
+}
+
+/* Password Input and Toggle */
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* Space for the eye icon */
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Position the icon inside the input */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+}
+
+.toggle-password:hover {
+    color: #007bff;
+}
+
+/* Login page body styles */
+.login-page-body {
+    background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/04/sunrise-gradient-background-desktop-wallpaper-preview.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure the background covers the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Remove default body margin */
+}
+
+/* Adjust container styling */
+.login-page-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Add a semi-transparent background for readability */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    height: 80%;
+    min-height: 600px;
+}
+
+@media (max-width: 768px) {
+.login-page-container {
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    border-radius: 25px;
+
+}
+
+.login-page-body {
+    background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/04/sunrise-gradient-background-desktop-wallpaper-preview.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 140vh; /* Ensure the background covers the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Remove default body margin */
+}
+
+}
+
+/* Registration page body styles */
+.register-page-body {
+    background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/04/sunrise-gradient-background-desktop-wallpaper-preview.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure the background covers the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Remove default body margin */
+}
+
+/* Container styles */
+.register-page-container {
+    display: flex;
+    width: 80%;
+    border-radius: 15px;
+    max-width: 1200px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Add a semi-transparent background for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 600px; /* Adjust the height here */
+}
+
+/* Registration section styles */
+.register-page-register-section {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the contents horizontally */
+}
+
+.register-page-register-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px; /* Reduce the space below the heading */
+    text-align: center;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.register-page-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Remove extra padding */
+    width: 100%; /* Ensure the form takes up the full width */
+    max-width: 400px; /* Set a max-width to control form width */
+}
+
+.register-page-form label {
+    margin-bottom: 5px; /* Reduce the space below labels */
+    font-weight: bold;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.register-page-form input {
+    padding: 10px;
+    margin-bottom: 15px; /* Reduce the space below inputs */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Registration button */
+.register-page-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.register-page-button:hover {
+    background-color: #0056b3;
+}
+
+/* Google login button alignment */
+.register-page-google-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Carousel section styles */
+.register-page-carousel-section {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+}
+
+.register-page-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.register-page-carousel-image {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.register-page-carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.register-page-carousel-image p {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    max-width: 80%;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.register-page-carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.register-page-carousel-controls button {
+    background-color: white;
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.register-page-carousel-controls button:hover,
+.register-page-carousel-controls button.active {
+    background-color: blue;
+}
+
+/* Show the first slide */
+.register-page-carousel-image:first-child {
+    display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .register-page-container {
+        flex-direction: column;
+        border-radius: 25px;
+    }
+
+    .register-page-register-section, .register-page-carousel-section {
+        width: 100%;
+    }
+
+    .register-page-carousel-image img {
+        height: 300px;
+        border-radius: 25px;
+    }
+
+    .register-page-carousel-image p {
+        font-size: 16px;
+    }
+}
+
+/* Disabled Button */
+.register-page-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Text Link after Form */
+.register-page-register-section p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.register-page-register-section p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-page-register-section p a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="register-page-body">
+    <div class="register-page-container">
+        <div class="register-page-register-section">
+            <h2>Register</h2>
+            <form class="register-page-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="johndoe@email.com" required>
+
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="password" required>
+                    <span class="toggle-password">
+                        <span class="material-icons">visibility_off</span>
+                    </span>
+                </div>
+
+                <button type="submit" class="register-page-button">Register</button>
+
+                <div class="register-page-google-login">
+                    <button class="google-login-button">
+                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google logo">
+                        Register with Google
+                    </button>
+                </div>
+
+                <p>Already have an account? <a href="login.html">Login here</a>.</p>
+            </form>
+        </div>
+        <div class="register-page-carousel-section">
+            <div class="register-page-carousel">
+                <div class="register-page-carousel-image" id="slide1">
+                    <img src="https://i.pinimg.com/564x/53/d0/98/53d098f14e2d43b7e4d27009182df2c9.jpg" alt="Feature 1">
+                    <p>Description for Feature 1</p>
+                </div>
+                <div class="register-page-carousel-image" id="slide2">
+                    <img src="https://i.pinimg.com/564x/03/12/af/0312afae459cbd7a64d6d572b4a10c88.jpg" alt="Feature 2">
+                    <p>Description for Feature 2</p>
+                </div>
+                <div class="register-page-carousel-image" id="slide3">
+                    <img src="https://i.pinimg.com/564x/54/a2/27/54a22752f5c9a39932456241ba7625fd.jpg" alt="Feature 3">
+                    <p>Description for Feature 3</p>
+                </div>
+            </div>
+            <div class="register-page-carousel-controls">
+                <button onclick="showSlide(1)" class="active"></button>
+                <button onclick="showSlide(2)"></button>
+                <button onclick="showSlide(3)"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

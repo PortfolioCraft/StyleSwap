@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/assets/owl.theme.default.min.css" />
+    <title>Home</title>
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/2560px-Ford_logo_flat.svg.png" alt="Logo">
+            </div>
+    
+            <!-- Gender Toggle Switch (Visible on large screens) -->
+            <div class="gender-switch-header">
+                <div class="toggle-switch">
+                    <input type="radio" id="male-header" name="gender-header" value="male" checked>
+                    <label for="male-header">Male</label>
+                    <input type="radio" id="female-header" name="gender-header" value="female">
+                    <label for="female-header">Female</label>
+                    <div class="switch-slider"></div>
+                </div>
+            </div>
+    
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+    
+            <!-- Icons -->
+            <div class="icons">
+                <i class="material-icons">shopping_cart</i>
+                <i class="material-icons">email</i>
+                <div class="profile-icon">
+                    <i class="material-icons">account_circle</i>
+                    <div class="dropdown-menu">
+                        <a href="#">Create Account</a>
+                        <a href="login.html">Login</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Toggle Icon -->
+            <div class="toggle-menu">
+                <span class="material-icons">menu</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebar-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+            <ul>
+                <li>
+                    <a href="/cart">
+                        <span class="material-icons">shopping_cart</span> View Cart
+                    </a>
+                </li>
+                <li>
+                    <a href="/notifications">
+                        <span class="material-icons">notifications</span> View Notifications
+                    </a>
+                </li>
+                <li>
+                    <a href="/create-account">
+                        <span class="material-icons">person_add</span> Create Account
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <span class="material-icons">login</span> Login
+                    </a>
+                </li>
+            </ul>
+            
+            <li class="gender-switch">
+                <span class="material-icons">wc</span> 
+                <!-- Gender Toggle Switch (Visible in sidebar menu on small screens) -->
+                <div class="toggle-switch">
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <div class="switch-slider"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+<main>
+    <div class="carousel-container">
+        <div class="carousel-wrapper">
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/949590/pexels-photo-949590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image 1">
+                <div class="carousel-caption">Text for Image 1</div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/24355042/pexels-photo-24355042/free-photo-of-top-view-of-a-bottle-of-perfume-jewelry-and-bridal-shoes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image 2">
+                <div class="carousel-caption">Text for Image 2</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/Fashion Campaign.jpg" alt="Image 3">
+                <div class="carousel-caption">Text for Image 3</div>
+            </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="control-button" id="prev">&lt;</button>
+            <button class="control-button" id="next">&gt;</button>
+        </div>
+       
+    </div>
+</main>
+
+<section class="section">
+    <!-- Left Side Menu -->
+    <div class="left-menu">
+        <ul>
+            <li><a href="#">New In</a></li>
+            <li><a href="#">Clothing</a></li>
+            <li><a href="#">Foot Wear</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Make Up</a></li>
+            <li><a href="#">Hair Care</a></li>
+            <li><a href="#">Purpose Based</a></li>
+        </ul>
+    </div>
+
+    <!-- Right Side Product Cards -->
+    <div class="product-cards">
+        <div class="product-card">
+            <div class="image-container">
+                <img src="images/Liquid Tiger Melt Tee.jpg" alt="Product 1">
+                <i class="material-icons heart-icon">favorite_border</i>
+            </div>
+            <h3>Product 1</h3>
+            <div class="additional-info">
+                <span style="margin-left: 10px;" class="teddy">Additional Text Here</span>
+                <button class="cart-button" style="margin-right: 10px;">
+                    <i class="material-icons cart-icon">shopping_cart</i>
+                </button>
+            </div>
+            <p>$10.00</p>
+        </div>
+        
+        <div class="product-card">
+            <div class="image-container">
+                <img src="images/Didcot Shirt Navy Applique Floral - S.jpg" alt="Product 1">
+                <i class="material-icons heart-icon">favorite_border</i>
+            </div>
+            <h3>Product 1</h3>
+            <div class="additional-info">
+                <span style="margin-left: 10px;" class="teddy">Additional Text Here</span>
+                <button class="cart-button" style="margin-right: 10px;">
+                    <i class="material-icons cart-icon">shopping_cart</i>
+                </button>
+            </div>
+            <p>$10.00</p>
+        </div>
+
+        <div class="product-card">
+            <div class="image-container">
+                <img src="images/Bohemian Floral Print Casual Shirt - S _ Beige.jpg" alt="Product 1">
+                <i class="material-icons heart-icon">favorite_border</i>
+            </div>
+            <h3>Product 1</h3>
+            <div class="additional-info">
+                <span style="margin-left: 10px;" class="teddy">Additional Text Here</span>
+                <button class="cart-button" style="margin-right: 10px;">
+                    <i class="material-icons cart-icon">shopping_cart</i>
+                </button>
+            </div>
+            <p>$10.00</p>
+        </div>
+
+         <div class="product-card">
+            <div class="image-container">
+                <img src="images/Bohemian Floral Print Casual Shirt - S _ Beige.jpg" alt="Product 1">
+                <i class="material-icons heart-icon">favorite_border</i>
+            </div>
+            <h3>Product 1</h3>
+            <div class="additional-info">
+                <span style="margin-left: 10px;" class="teddy">Additional Text Here</span>
+                <button class="cart-button" style="margin-right: 10px;">
+                    <i class="material-icons cart-icon">shopping_cart</i>
+                </button>
+            </div>
+            <p>$10.00</p>
+        </div>
+
+         <div class="product-card">
+            <div class="image-container">
+                <img src="images/Liquid Tiger Melt Tee.jpg" alt="Product 1">
+                <i class="material-icons heart-icon">favorite_border</i>
+            </div>
+            <h3>Product 1</h3>
+            <div class="additional-info">
+                <span style="margin-left: 10px;" class="teddy">Additional Text Here</span>
+                <button class="cart-button" style="margin-right: 10px;">
+                    <i class="material-icons cart-icon">shopping_cart</i>
+                </button>
+            </div>
+            <p>$10.00</p>
+        </div>
+
+        <div class="product-card">
+            <div class="image-container">
+                <img src="images/Didcot Shirt Navy Applique Floral - S.jpg" alt="Product 1">
+                <i class="material-icons heart-icon">favorite_border</i>
+            </div>
+            <h3>Product 1</h3>
+            <div class="additional-info">
+                <span style="margin-left: 10px;" class="teddy">Additional Text Here</span>
+                <button class="cart-button" style="margin-right: 10px;">
+                    <i class="material-icons cart-icon">shopping_cart</i>
+                </button>
+            </div>
+            <p>$10.00</p>
+        </div>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            const carouselWrapper = document.querySelector('.carousel-wrapper');
+            const items = document.querySelectorAll('.carousel-item');
+            const itemCount = items.length;
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                const offset = -currentIndex * 100;
+                carouselWrapper.style.transform = `translateX(${offset}%)`;
+            }
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : itemCount - 1;
+                updateCarousel();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex < itemCount - 1) ? currentIndex + 1 : 0;
+                updateCarousel();
+            });
+
+            // Auto-slide
+            setInterval(() => {
+                nextButton.click();
+            }, 5000); // Change image every 5 seconds
+        });
+    </script>
+</body>
+</html>

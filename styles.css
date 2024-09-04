@@ -18,13 +18,17 @@ body.login-page-body {
     height: 100vh;
 }
 
-
 /* General Styles */
 header {
     background-color: blue;
     padding: 10px 0;
     box-shadow: 0 4px 2px -2px gray;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header stays above other content */
 }
+
 
 .toggle-switch {
     position: relative;
@@ -697,7 +701,7 @@ header {
 
 @media (max-width: 480px) {
     .product-cards {
-        grid-template-columns: 1fr; /* 1 card per row on small screens */
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
         gap: 10px; /* Reduced gap between cards */
     }
 }

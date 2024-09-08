@@ -527,12 +527,12 @@ header {
 }
 /* Right Side Product Cards */
 .product-cards {
-    width: 75%; /* Occupies 75% of the width */
-    padding: 20px;
+    width: 100%; /* Take full width, no white space on sides */
+    padding: 0 10px; /* Adjust padding to remove white space */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-    grid-auto-rows: masonry; /* Enables masonry layout */
-    gap: 20px; /* Space between cards */
+    grid-auto-rows: masonry; /* Masonry layout for different height items */
+    gap: 15px; /* Reduce space between cards */
     box-sizing: border-box;
 }
 
@@ -545,6 +545,7 @@ header {
     text-align: center;
     width: 100%;
     position: relative;
+    margin: 0; /* Remove any extra margin */
 }
 
 .product-card img {
@@ -562,9 +563,9 @@ header {
 .heart-icon {
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px; /* Right-aligned for compactness */
     color: gray;
-    font-size: 2vw; /* Responsive icon size */
+    font-size: 24px; /* Larger size for bigger screens */
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5px;
@@ -580,7 +581,7 @@ header {
     padding: 5px 0;
     font-size: 1.5vw; /* Responsive font size */
     color: #666;
-    margin: 10px 0;
+    margin: 5px 0; /* Reduce margin for compact layout */
 }
 
 /* Style for the cart button */
@@ -603,12 +604,12 @@ header {
 }
 
 .cart-icon {
-    font-size: 2vw; /* Responsive icon size */
+    font-size: 20px; /* Larger size for bigger screens */
     color: #333;
 }
 
 .product-card h3 {
-    margin: 10px 0;
+    margin: 5px 0; /* Tighter margins for compact layout */
     font-size: 2vw; /* Responsive font size */
     text-align: left;
     margin-left: 10px;
@@ -622,20 +623,23 @@ header {
     text-align: left;
     margin-left: 10px;
     color: #666;
+    margin: 0; /* No margin for a compact layout */
 }
 
 /* Responsive Layout for Small Screens */
 @media (max-width: 768px) {
     .product-cards {
         grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        padding: 0 5px; /* Remove left and right padding to eliminate white space */
+        gap: 10px; /* Reduce space between cards */
     }
 
     .heart-icon, .cart-icon {
-        font-size: 3vw; /* Smaller icons */
+        font-size: 16px; /* Reduce icon size on smaller screens */
     }
 
     .additional-info, .product-card h3, .product-card p {
-        font-size: 2vw; /* Smaller text */
+        font-size: 3vw; /* Reduce text size on smaller screens */
     }
 }
 
@@ -704,7 +708,7 @@ header {
     }
 
     .product-cards {
-        width: 110%; /* Set width to 100% to fit within the view */
+        width: 100%; /* Set width to 100% to fit within the view */
         grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
         gap: 10px; /* Reduced gap between cards */
         text-align: left;

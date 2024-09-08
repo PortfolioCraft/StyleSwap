@@ -525,16 +525,17 @@ header {
     padding: 20px;
     box-sizing: border-box;
 }
-
 /* Right Side Product Cards */
 .product-cards {
     width: 75%; /* Occupies 75% of the width */
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    grid-auto-rows: masonry; /* Enables masonry layout */
     gap: 20px; /* Space between cards */
     box-sizing: border-box;
 }
+
 /* Product Card Styling */
 .product-card {
     background-color: #fff;
@@ -542,7 +543,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     text-align: center;
-    width: 90%;
+    width: 100%;
     position: relative;
 }
 
@@ -563,7 +564,7 @@ header {
     top: 10px;
     left: 10px;
     color: gray;
-    font-size: 24px;
+    font-size: 2vw; /* Responsive icon size */
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5px;
@@ -577,7 +578,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
-    font-size: 16px;
+    font-size: 1.5vw; /* Responsive font size */
     color: #666;
     margin: 10px 0;
 }
@@ -602,13 +603,13 @@ header {
 }
 
 .cart-icon {
-    font-size: 20px;
+    font-size: 2vw; /* Responsive icon size */
     color: #333;
 }
 
 .product-card h3 {
     margin: 10px 0;
-    font-size: 20px;
+    font-size: 2vw; /* Responsive font size */
     text-align: left;
     margin-left: 10px;
     font-family: "DM Serif Text", serif;
@@ -617,11 +618,27 @@ header {
 }
 
 .product-card p {
-    font-size: 16px;
+    font-size: 1.5vw; /* Responsive font size */
     text-align: left;
     margin-left: 10px;
     color: #666;
 }
+
+/* Responsive Layout for Small Screens */
+@media (max-width: 768px) {
+    .product-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+
+    .heart-icon, .cart-icon {
+        font-size: 3vw; /* Smaller icons */
+    }
+
+    .additional-info, .product-card h3, .product-card p {
+        font-size: 2vw; /* Smaller text */
+    }
+}
+
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {

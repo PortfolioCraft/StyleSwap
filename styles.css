@@ -20,9 +20,8 @@ body.login-page-body {
 
 /* General Styles */
 header {
-    background-color: blue;
+    background-color: white;
     padding: 10px 0;
-    box-shadow: 0 4px 2px -2px gray;
     position: sticky;
     top: 0;
     width: 100%;
@@ -62,14 +61,14 @@ header {
 .toggle-switch #female-header:checked + label[for="female-header"],
 .toggle-switch #male:checked + label[for="male"],
 .toggle-switch #female:checked + label[for="female"] {
-    color: #fff; /* Change text color when active */
+    color: white; /* Change text color when active */
 }
 
 .toggle-switch .switch-slider {
     position: absolute;
     width: 50%;
     height: 100%;
-    background-color: #007bff; /* Default color for Male */
+    background-color: #E84797; /* Default color for Male */
     border-radius: 20px;
     transition: transform 0.3s ease;
     z-index: 1; /* Below label text */
@@ -78,7 +77,7 @@ header {
 .toggle-switch #female-header:checked ~ .switch-slider,
 .toggle-switch #female:checked ~ .switch-slider {
     transform: translateX(100%); /* Move slider to the Female side */
-    background-color: #ff4081; /* Color for Female */
+    background-color: #4E7CB2; /* Color for Female */
 }
 
 /* Header-specific styles */
@@ -126,8 +125,7 @@ header {
 .search-bar input {
     width: 100%; /* Make the input field full width */
     padding: 8px; /* Padding inside the input */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 4px; /* Rounded corners */
+    border-radius: 25px; /* Rounded corners */
     font-family: "DM Serif Text", serif;
     font-weight: 400;
     font-style: normal;
@@ -151,6 +149,7 @@ header {
 .profile-icon {
     position: relative;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 /* Dropdown menu styling */
@@ -196,12 +195,12 @@ header {
 .icons i {
     font-size: 24px; /* Size of the icons */
     margin-left: 15px; /* Space between icons */
-    color: white;
+    color: #152b6f;
     cursor: pointer; /* Pointer cursor for interactive icons */
 }
 
 .icons i:hover {
-    color: #ddd;
+    color: #ffd602;
 }
 
 /* Toggle Menu Styles */
@@ -395,11 +394,11 @@ header {
  /* Custom styles for carousel */
  .carousel-container {
     width: 94%;
-    margin: 25px auto;
-    padding: 20px;
-    background: #f9f9f9;
+    margin: 8px auto;
+    padding: 12px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #eeedf0;
     position: relative;
     overflow: hidden;
 }
